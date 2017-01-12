@@ -107,23 +107,76 @@ $('#showme').on('click', function() {
 });
 
 $('#save_my_car').on('click', function() {
-	
-		$('.summary-option-ul').find('li').map(function() {
-			var getMyData = $(this).text();
-        	console.log(JSON.stringify(getMyData));
-    		var buycarReference = database.ref('car_settings');
+		var carName;
+		var optionName;
+		var price;
+		$('.summary-option-ul').find('li').map(function(i,n) {
+			console.log('i',i,'n',n);
+			optionName = $(n).find('strong');
+			console.log('optionname:', optionName[0].innerHTML);
+			carName = $(n).find('span');
+			console.log('carname:', carName[0].innerHTML);
+			
+
+			var pattern = /\$(\d+)/;
+			price = pattern.exec(n.innerHTML);
+			console.log('price:',price[1]);
+			var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
+			var buycarReference = database.ref('car_settings');
  			buycarReference.push({
- 			a_test: getMyData
- 			})
- 		})
+ 				a_test: carObject
+ 			});
+
+			//var getMyData = $(this).text();
+        	//console.log(JSON.stringify(getMyData));
+        	// var carObject = '{"Vehicle":"" , "Color":"" , "package":""}';
+        	// var result = $.parseJSON(carObject);
+        	// console.log(carObject);
+//         	var resultJSON = '{"FirstName":"John","LastName":"Doe","Email":"johndoe@johndoe.com","Phone":"123 dead drive"}';
+// var result = $.parseJSON(resultJSON);
+// $.each(result, function(k, v) {
+//     //display the key and value pair
+//     alert(k + ' is ' + v);
+	    });
+	    
+   //  		var buycarReference = database.ref('car_settings');
+ 		// 	buycarReference.push({
+ 		// 	a_test: getMyData
+ 		// 	})
+ 		// })
 });
-   
+
+//var resultJSON = {console.log(JSON.stringify(getMyData)};
+
+
+//By using jquery json parser
+
+// var obj = $.parseJSON('{"name": "", "skills": "", "jobtitel": "Entwickler", "res_linkedin": "GwebSearch"}');
+// alert(obj['jobtitel']);
+
+// //By using javasript json parser
+// var t = JSON.parse('{"name": "", "skills": "", "jobtitel": "Entwickler", "res_linkedin": "GwebSearch"}');
+// alert(t['jobtitel'])
+
 		//console.log("our function", this);
 		// var data = getMyDataFromDOM();
 		// console.log(JSON.stringify(data));
 		// console.log(myVehicleSelection);
  		// console.log(myColorSelection);
  		// console.log(myPackageSelection);
+
+function getData() {
+	database.ref('car_settings').on('value', function (results) {
+		var allData = results.val();
+		var car_settings = [];
+		for (var i in allData) {
+			var context = {
+				a_test: allData[i].a_test
+			}
+		}
+
+	});
+}
 
 $('li').on('click', function() {
   var name = $(this).data('tab');
