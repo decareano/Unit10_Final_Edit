@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "supervisor server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/decareano/Unit10_Final_Edit/issues"
   },
-  "homepage": "https://github.com/decareano/Unit10_Final_Edit#readme"
+  "homepage": "https://github.com/decareano/Unit10_Final_Edit#readme",
+  "dependencies": {
+    "supervisor": "^0.12.0"
+  }
 }
