@@ -2,14 +2,14 @@
 
 // <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 
-  // Initialize Firebase
-			var config = {
-			    apiKey: "AIzaSyA_qt-rn2gQiz-97PEOpYvcaqwnu34j6Lo",
-			    authDomain: "buycar-88cbd.firebaseapp.com",
-			    databaseURL: "https://buycar-88cbd.firebaseio.com",
-			    storageBucket: "buycar-88cbd.appspot.com",
-			    messagingSenderId: "185230057366"
-			};
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyA_qt-rn2gQiz-97PEOpYvcaqwnu34j6Lo",
+    authDomain: "buycar-88cbd.firebaseapp.com",
+    databaseURL: "https://buycar-88cbd.firebaseio.com",
+    storageBucket: "buycar-88cbd.appspot.com",
+    messagingSenderId: "185230057366"
+};
 firebase.initializeApp(config);
 
 
@@ -107,6 +107,7 @@ $('#showme').on('click', function() {
 });
 
 $('#save_my_car').on('click', function() {
+		var save_car = prompt("Enter your save name", Math.round(Math.random() * 1000));
 		var carName;
 		var optionName;
 		var price;
@@ -116,18 +117,21 @@ $('#save_my_car').on('click', function() {
 			console.log('optionname:', optionName[0].innerHTML);
 			carName = $(n).find('span');
 			console.log('carname:', carName[0].innerHTML);
-			
-
 			var pattern = /\$(\d+)/;
 			price = pattern.exec(n.innerHTML);
 			console.log('price:',price[1]);
-			var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
-			var buycarReference = database.ref('car_settings');
- 			buycarReference.push({
- 				a_test: carObject
- 			});
+		});			
 
-			//var getMyData = $(this).text();
+		
+		var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
+		var buycarReference = database.ref('car_settings');
+
+		var item = {
+			key: save_car,
+			carData: carObject
+		};
+		buycarReference.push(item);
+		//var getMyData = $(this).text();
         	//console.log(JSON.stringify(getMyData));
         	// var carObject = '{"Vehicle":"" , "Color":"" , "package":""}';
         	// var result = $.parseJSON(carObject);
@@ -137,7 +141,7 @@ $('#save_my_car').on('click', function() {
 // $.each(result, function(k, v) {
 //     //display the key and value pair
 //     alert(k + ' is ' + v);
-	    });
+	    
 	    
    //  		var buycarReference = database.ref('car_settings');
  		// 	buycarReference.push({
