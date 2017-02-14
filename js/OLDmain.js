@@ -111,21 +111,25 @@ $('#save_my_car').on('click', function() {
 		var optionName;
 		var price;
 		$('.summary-option-ul').find('li').map(function(i,n) {
-			console.log('i',i,'n',n);
+			//console.log('i',i,'n',n);
 			optionName = $(n).find('strong');
-			console.log('optionname:', optionName[0].innerHTML);
+			//console.log('optionname:', optionName[0].innerHTML);
 			carName = $(n).find('span');
-			console.log('carname:', carName[0].innerHTML);
+			//console.log('carname:', carName[0].innerHTML);
 			
 
 			var pattern = /\$(\d+)/;
 			price = pattern.exec(n.innerHTML);
-			console.log('price:',price[1]);
+			//console.log('price:',price[1]);
 			var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
 			var buycarReference = database.ref('car_settings');
- 			buycarReference.push({
+ 			// buycarReference.push({
+ 			// 	a_test: carObject
+ 			// });
+ 			var item = {
  				a_test: carObject
- 			});
+ 			};
+ 			buycarReference.push(item);
 
 			//var getMyData = $(this).text();
         	//console.log(JSON.stringify(getMyData));
