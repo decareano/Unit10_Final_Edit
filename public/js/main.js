@@ -120,7 +120,7 @@ $('#save_my_car').on('click', function() {
 			var pattern = /\$(\d+)/;
 			price = pattern.exec(n.innerHTML);
 			console.log('price:',price[1]);
-		});			
+					
 
 		
 		var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
@@ -141,7 +141,7 @@ $('#save_my_car').on('click', function() {
 // $.each(result, function(k, v) {
 //     //display the key and value pair
 //     alert(k + ' is ' + v);
-	    
+	    });
 	    
    //  		var buycarReference = database.ref('car_settings');
  		// 	buycarReference.push({
