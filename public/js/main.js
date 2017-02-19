@@ -126,19 +126,34 @@ $('#save_my_car').on('click', function() {
 
 		
 		var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
-		//console.log(carObject);
-		var buycarReference = database.ref('car_settings');
+
+		$.ajax({
+			type: "POST",
+			url: '/api/car_buying',
+			data: JSON.stringify(carObject),
+			success: function(data, textStatus, jqXHR) {
+				console.log(data);
+				console.log(textStatus);
+				console.log(jqXHR);
+			},
+			dataType: 'json'
+			failure: function(event, jqXHR, ajaxSettings, thrownError) { 
+                    console.log(event); console.log(jqXHR); console.log(ajaxSettings); console.log(thrownError); 
+            },      
+		});
+
+		// var buycarReference = database.ref('car_settings');
+
+
 
 		// var item = {
 		// 	key: save_car,
 		// 	carData: carObject
 		// };
-		var item = {
-				key: save_car,
- 				a_test: carObject
- 		};
 
-		buycarReference.push(item);
+		// buycarReference.push(item);
+
+
 		//var getMyData = $(this).text();
         	//console.log(JSON.stringify(getMyData));
         	// var carObject = '{"Vehicle":"" , "Color":"" , "package":""}';
@@ -149,7 +164,7 @@ $('#save_my_car').on('click', function() {
 // $.each(result, function(k, v) {
 //     //display the key and value pair
 //     alert(k + ' is ' + v);
-	    });
+	    //});
 	    
    //  		var buycarReference = database.ref('car_settings');
  		// 	buycarReference.push({
