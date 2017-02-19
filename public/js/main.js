@@ -119,9 +119,11 @@ $('#save_my_car').on('click', function() {
 			//console.log('carname:', carName[0].innerHTML);
 			var pattern = /\$(\d+)/;
 			price = pattern.exec(n.innerHTML);
-			//console.log('price:',price[1]);
-				
-		
+
+			console.log('price:',price[1]);
+					
+
+
 		
 		var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
 		//console.log(carObject);
