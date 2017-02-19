@@ -29,6 +29,11 @@
     height: 100px; 
     margin: 15 auto;*/
 
+.navbar-inverse {
+    background-color: #999;
+    border-color: #080808;
+
+
 
 #showroom {
   display: none;
