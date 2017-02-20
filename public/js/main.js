@@ -139,7 +139,7 @@ $('#save_my_car').on('click', function() {
 			dataType: 'json'
 			failure: function(event, jqXHR, ajaxSettings, thrownError) { 
                     console.log(event); console.log(jqXHR); console.log(ajaxSettings); console.log(thrownError); 
-            },      
+            }      
 		});
 
 		// var buycarReference = database.ref('car_settings');

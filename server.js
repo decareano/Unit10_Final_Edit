@@ -11,6 +11,7 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.post('/api/car_buying', (req, res, next) => {
   const results = [];
   // Grab data from http request
+  // Here: you will need to set the data object to take the information passed from our ajax request
   const data = {id: req.body.text, model: req.body.text, color: req.body.text, price: req.body.text};
   
   // Get a Postgres client from the connection pool
