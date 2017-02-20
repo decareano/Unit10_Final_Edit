@@ -10,7 +10,7 @@ var config = {
     storageBucket: "buycar-88cbd.appspot.com",
     messagingSenderId: "185230057366"
 };
-firebase.initializeApp(config);
+//firebase.initializeApp(config);
 
 
 var myVehicleSelection = {
@@ -121,12 +121,12 @@ $('#save_my_car').on('click', function() {
 			price = pattern.exec(n.innerHTML);
 
 			console.log('price:',price[1]);
-					
+		});
 
 
 		
 		var carObject = {'carname': carName[0].innerHTML, 'optionname': optionName[0].innerHTML, 'price': price[1]};
-
+		console.log(JSON.stringify(carObject));
 		$.ajax({
 			type: "POST",
 			url: '/api/car_buying',
@@ -136,7 +136,6 @@ $('#save_my_car').on('click', function() {
 				console.log(textStatus);
 				console.log(jqXHR);
 			},
-			dataType: 'json'
 			failure: function(event, jqXHR, ajaxSettings, thrownError) { 
                     console.log(event); console.log(jqXHR); console.log(ajaxSettings); console.log(thrownError); 
             }      
@@ -191,7 +190,7 @@ $('#save_my_car').on('click', function() {
 		// console.log(myVehicleSelection);
  		// console.log(myColorSelection);		// console.log(myPackageSelection);
 
-function getData() {
+/*function getData() {
 	database.ref('car_settings').on('value', function (results) {
 		var allData = results.val();
 		var car_settings = [];
@@ -204,7 +203,7 @@ function getData() {
 		console.log(context)
 
 	});
-}
+}*/
 
 $('li').on('click', function() {
   var name = $(this).data('tab');
@@ -360,7 +359,7 @@ var infowindow;
           infowindow.open(map, this);
         });
       }
-var database = firebase.database();
+//var database = firebase.database();
 
 
 
