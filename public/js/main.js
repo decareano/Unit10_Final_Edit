@@ -130,7 +130,7 @@ $('#save_my_car').on('click', function() {
 		$.ajax({
 			type: "POST",
 			url: '/api/car_buying',
-			data: JSON.stringify(carObject),
+			data: carObject,
 			success: function(data, textStatus, jqXHR) {
 				console.log(data);
 				console.log(textStatus);
