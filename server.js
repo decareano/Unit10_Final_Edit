@@ -1,21 +1,33 @@
 var express = require('express');
-var app = express();
 var path = require('path');
+const pg = require('pg');
+
+var app = express();
+
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/car_buying';
+
+const client = new pg.Client(connectionString);
+client.connect();
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname + '/index.html'));
-})
+});
 
 app.use(express.static(path.join(__dirname + '/public')));
 
 app.post('/api/car_buying', (req, res, next) => {
   const results = [];
+    console.log('data',req.body);
+
   // Grab data from http request
   // Here: you will need to set the data object to take the information passed from our ajax request
-  const data = {id: req.body.text, model: req.body.text, color: req.body.text, price: req.body.text};
+  //const data = {id: req.text, model: req.body.text, color: req.body.text, price: req.body.text};
+  //console.log('data',data);
+  return 1;
+  //const data = {id: req.body.text, model: req.body.text, color: req.body.text, price: req.body.text};
   
   // Get a Postgres client from the connection pool
-  pg.connect(connectionString, (err, client, done) => {
+  /*pg.connect(connectionString, (err, client, done) => {
     // Handle connection errors
     if(err) {
       done();
@@ -36,7 +48,9 @@ app.post('/api/car_buying', (req, res, next) => {
       done();
       return res.json(results);
     });
-  });
+  });*/
+
+  return 1;
 });
 
 var server = app.listen(8081, function () {
