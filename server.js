@@ -23,7 +23,7 @@ app.post('/api/car_buying', (req, res, next) => {
     const results = [];
     var myArray = req.body;
     console.log('input', myArray);
-    console.log(myArray["carname"].toString());
+    //console.log(myArray["model"].toString());
     
 
 
@@ -48,8 +48,8 @@ app.post('/api/car_buying', (req, res, next) => {
       return res.status(500).json({success: false, data: err});
     }
     // SQL Query > Insert Data
-    client.query('INSERT INTO features(price, model, color) values($1, $2, $3)',
-    [data.price, data.model, data.color]);
+    client.query('INSERT INTO features(price, vehicle, color) values($1, $2, $3)',
+    [data.price, data.vehicle, data.color]);
     // SQL Query > Select Data
     const query = client.query('SELECT * FROM features ORDER BY id ASC');
     // Stream results back one row at a time
