@@ -123,11 +123,12 @@ $('#save_my_car').on('click', function() {
 			price = pattern.exec(n.innerHTML);
 
 			console.log('price:',price[1]);
+
 		});
 
 
 		
-		var carObject = {'model': model[0].innerHTML, 'color:': color[0].innerHTML, 'price': price[1]};
+		var carObject = {'model': myVehicleSelection.choice, 'color': myColorSelection.choice, 'price': myVehicleSelection.price + myColorSelection.price + myPackageSelection.price};
 		console.log(JSON.stringify(carObject));
 		$.ajax({
 			type: "POST",
