@@ -108,14 +108,15 @@ $('#showme').on('click', function() {
 
 $('#save_my_car').on('click', function() {
 		var save_car = prompt("Enter your save name", Math.round(Math.random() * 1000));
-		var model;
 		var color;
+		var model;
 		var price;
 		$('.summary-option-ul').find('li').map(function(i,n) {
 			//console.log('i',i,'n',n);
+			color = $(n).find('span');
 			model = $(n).find('span');
 			console.log('model:', model[0].innerHTML);
-			//color = $(n).find('strong');
+			
 			//console.log('color:', color[0].innerHTML);
 			//colorName = $(n).find('strong');
 			//console.log('carname:', carName[0].innerHTML);
@@ -127,7 +128,7 @@ $('#save_my_car').on('click', function() {
 
 
 		
-		var carObject = {'model': model[0].innerHTML, 'color:': color[0].innerHTML, 'price': price[1]};
+		var carObject = {'model': model[0].innerHTML, 'color': color[0].innerHTML, 'price': price[1]};
 		console.log(JSON.stringify(carObject));
 		$.ajax({
 			type: "POST",
