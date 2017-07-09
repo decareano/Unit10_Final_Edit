@@ -12,7 +12,15 @@ const client = new pg.Client(connectionString);
 client.connect();
 
 app.get('/', function (req, res) {
-   res.sendFile(path.join(__dirname + '/index.html'));
+   res.sendFile(path.join(__dirname + '/splash.html'));
+   
+   console.log(res);
+});
+
+//res.redirect('/second_page');
+
+app.get('/second_page', function (req, res) {
+   res.sendFile(path.join(__dirname + '/second_page.html'));
 });
 
 app.use(express.static(path.join(__dirname + '/public')));

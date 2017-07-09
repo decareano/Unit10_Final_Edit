@@ -20,6 +20,8 @@
   overflow: hidden;
 }
 
+
+
 #save_my_car {
   float: right;
     
@@ -42,6 +44,13 @@
 .navbar-fixed-bottom {
   background-color: white;
 }
+
+.navbar-inverse {
+  background-color: red !important;
+  border-color: #080808;
+}
+
+
 
 /*body {
     background-color: green;
