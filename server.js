@@ -13,14 +13,15 @@ client.connect();
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname + '/splash.html'));
-   
-   console.log(res);
+   //res.render('/splash.html');
+   //console.log(res);
 });
 
 //res.redirect('/second_page');
 
 app.get('/second_page', function (req, res) {
-   res.sendFile(path.join(__dirname + '/second_page.html'));
+   res.sendFile(path.join(__dirname + '/index.html'));
+   console.log("howdy");
 });
 
 app.use(express.static(path.join(__dirname + '/public')));
