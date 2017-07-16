@@ -33,7 +33,7 @@
 
 
 #showroom {
-  display: none;
+  display: list-item;
 }
 
 .demo-container {
@@ -46,7 +46,7 @@
 }
 
 .navbar-inverse {
-  background-color: red !important;
+  background-color: green;
   border-color: #080808;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .vehicle-display {
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
 }
 

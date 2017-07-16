@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
 app.get('/second_page', function (req, res) {
    res.sendFile(path.join(__dirname + '/index.html'));
-   console.log("howdy");
+   
 });
 
 app.use(express.static(path.join(__dirname + '/public')));
