@@ -101,6 +101,7 @@ var carSelection = {
 	
 }
 
+
 $('#showme').on('click', function() {
 	$('#home').hide();
 	$('#showroom').show();
@@ -143,70 +144,22 @@ $('#save_my_car').on('click', function() {
                     console.log(event); console.log(jqXHR); console.log(ajaxSettings); console.log(thrownError); 
             }      
 		});
-
-		// var buycarReference = database.ref('car_settings');
-
-
-
-		// var item = {
-		// 	key: save_car,
-		// 	carData: carObject
-		// };
-
-		// buycarReference.push(item);
-
-
-		//var getMyData = $(this).text();
-        	//console.log(JSON.stringify(getMyData));
-        	// var carObject = '{"Vehicle":"" , "Color":"" , "package":""}';
-        	// var result = $.parseJSON(carObject);
-        	// console.log(carObject);
-//         	var resultJSON = '{"FirstName":"John","LastName":"Doe","Email":"johndoe@johndoe.com","Phone":"123 dead drive"}';
-// var result = $.parseJSON(resultJSON);
-// $.each(result, function(k, v) {
-//     //display the key and value pair
-//     alert(k + ' is ' + v);
-	    //});
-	    
-   //  		var buycarReference = database.ref('car_settings');
- 		// 	buycarReference.push({
- 		// 	a_test: getMyData
- 		// 	})
- 		// })
 });
 
-//var resultJSON = {console.log(JSON.stringify(getMyData)};
+// $('body').on('click', 'div#este', function (e) {
+// 	console.log('this is the click');
+// 	e.preventDefault();
 
 
-//By using jquery json parser
+// });
 
-// var obj = $.parseJSON('{"name": "", "skills": "", "jobtitel": "Entwickler", "res_linkedin": "GwebSearch"}');
-// alert(obj['jobtitel']);
 
-// //By using javasript json parser
-// var t = JSON.parse('{"name": "", "skills": "", "jobtitel": "Entwickler", "res_linkedin": "GwebSearch"}');
-// alert(t['jobtitel'])
+$('.carousel-inner').on('click', '.item', function() {
+	
+	
+	console.log('hi');
+});
 
-		//console.log("our function", this);
-		// var data = getMyDataFromDOM();
-		// console.log(JSON.stringify(data));
-		// console.log(myVehicleSelection);
- 		// console.log(myColorSelection);		// console.log(myPackageSelection);
-
-/*function getData() {
-	database.ref('car_settings').on('value', function (results) {
-		var allData = results.val();
-		var car_settings = [];
-		for (var i in allData) {
-			var context = {
-				a_test: allData[i]
-
-			}
-		}
-		console.log(context)
-
-	});
-}*/
 
 $('li').on('click', function() {
   var name = $(this).data('tab');

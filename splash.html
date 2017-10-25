@@ -23,9 +23,9 @@
   </div>
 </nav>
 <div>
-<button id="showme"> 
-  <a href="/second_page">Please pick your dream car</a>
-</button>
+<!-- <button id="showme"> 
+  <a href="/second_page"><h3>Please pick your dream car</h3></a>
+</button> -->
 
 </div>
 
@@ -37,40 +37,39 @@
   <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANfUcFBlzYGWnkUBUWqW_DPKFPqW1Jz1A&libraries=places&callback=initMap"> async defer></script> -->
 
   <!--<img src="/assets/cadenza.jpg"> -->
-  <button><a href="/second_page">I like this one !!</a></button>
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- <div id="este"><button ><h3>I like this one ===============!!</h3></a></button></div> -->
+<!-- <div class="test"><button>optima model</button> -->
+
+
+
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-pause="hover">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
   </ol>
-
-
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-  <div class="item active">
-    <img src="/assets/cadenza.jpg" alt="Cadenza"> 
-
-<!-- <script>
-// let picked;
-// $('#forte').on('click', function(){
-//   redirect to secondpage with 'forte' as variable
-// })
-// </script> -->
-    
-  </div>
+  
+    <div class="item active">
+      <img src="/assets/cadenza.jpg" alt="Cadenza"> 
+    </div>
 
     <div class="item" id="forte">
-      <img src="/assets/forte.jpg" alt="Forte"/>
-    </div>>
+      <img src="/assets/forte.jpg" alt="Forte" data-pause="hover">
+    </div>
       
-
-
     <div class="item">
-      <img src="/assets/optima.jpg" alt="Optima">
+        <div class="test"><button>optimamodel</button></div>
+        <img src="/assets/optima.jpg" alt="Optima">
+      <!-- <button id="pinga">Pick Me</button> -->
+      <!-- <button id="showme"> -->
     </div>
 
     <div class="item">
@@ -80,6 +79,7 @@
     <div class="item">
       <img src="/assets/soul.jpg" alt="Soul">
     </div>
+  
   </div>
 
   <!-- Left and right controls -->

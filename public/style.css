@@ -20,6 +20,10 @@
   overflow: hidden;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 
 
 #save_my_car {

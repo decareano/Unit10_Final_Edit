@@ -4,6 +4,7 @@ const pg = require('pg');
 var bodyParser = require("body-parser");
 
 
+
 var app = express();
 
 const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/car_buying';
@@ -21,7 +22,7 @@ app.get('/', function (req, res) {
 
 app.get('/second_page', function (req, res) {
    res.sendFile(path.join(__dirname + '/index.html'));
-   console.log('========================', path.join(__dirname + '/index.html'));
+   //console.log('========================', path.join(__dirname + '/index.html'));
    
 });
 
