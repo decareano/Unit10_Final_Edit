@@ -155,9 +155,10 @@ $('#save_my_car').on('click', function() {
 
 
 $('.carousel-inner').on('click', '.item', function() {
+	//var myPrice= $(this).data('tab');
+	 
 	
 	
-	console.log('hi');
 });
 
 

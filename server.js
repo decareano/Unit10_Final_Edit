@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 
 app.get('/second_page', function (req, res) {
    res.sendFile(path.join(__dirname + '/index.html'));
-   //console.log('========================', path.join(__dirname + '/index.html'));
+   console.log('========================', path.join(__dirname + '/index.html'));
    
 });
 
