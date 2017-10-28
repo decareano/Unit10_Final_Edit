@@ -154,16 +154,44 @@ $('#save_my_car').on('click', function() {
 // });
 
 
-$('.carousel-inner').on('click', '.item', function() {
-	//var myPrice= $(this).data('tab');
+// $('.carousel-inner').on('click', '.item', function() {
+// 	var myPrice= $(this).data('tab');
 	 
 	
 	
-});
+// });
 
 
-$('li').on('click', function() {
-  var name = $(this).data('tab');
+// $('li').on('click', function() {
+//   var name = $(this).data('tab');
+//   //var yourChoice;
+  
+  
+  
+//   switch(name) {
+//     case 'vehicle':
+//       displayVehicleOptions();
+//       //console.log(displayVehicleOptions);
+//       break;
+//     case 'color':
+//       displayColorOptions();
+//       //console.log(yourChoice;
+//       break;
+//     case 'package':
+//       displayPackageOptions();
+//       break;
+//     case 'summary':
+//       displaySummary();
+//     default:
+//       yourChoice = [];
+//       //console.log(yourChoice);
+//   }
+// });
+
+$('.carousel-inner').on('click', 'item', function() {
+  var name = $(this).data('item');
+  console.log(data);
+  $('.cost-display').html(total);
   //var yourChoice;
   
   
@@ -265,7 +293,7 @@ function displayCost() {
     // console.log(myPackageSelection.price);
     //$('myVehicelSelection').val()
 
-    $('.cost-display').html(total);
+    //$('.cost-display').html(total);
 
 }
 
